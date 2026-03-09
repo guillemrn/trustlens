@@ -16,7 +16,7 @@ export function WhyItMatters() {
                         viewport={{ once: true }}
                         className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-8 backdrop-blur-md"
                     >
-                        <BookOpen className="w-8 h-8 text-brand-400" />
+                        <BookOpen className="w-8 h-8 text-accent-400" />
                     </motion.div>
 
                     <motion.h2
@@ -27,7 +27,7 @@ export function WhyItMatters() {
                         className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-balance"
                     >
                         Terms of Service are broken. <br className="hidden md:block" />
-                        <span className="text-brand-400">We&apos;re fixing them.</span>
+                        <span className="text-accent-400">We&apos;re fixing them.</span>
                     </motion.h2>
 
                     <motion.div
@@ -40,13 +40,13 @@ export function WhyItMatters() {
                         <div>
                             <h3 className="text-2xl font-semibold mb-3">The Problem</h3>
                             <p className="text-white/70 leading-relaxed">
-                                The average privacy policy takes 18 minutes to read and is written in dense legal jargon. Nobody reads them, which means companies can bury risky clauses about your data and wallet without you knowing.
+                                The average privacy policy takes around 15–20 minutes to read and is written in complex legal language. Most people accept them without understanding the implications.
                             </p>
                         </div>
                         <div>
                             <h3 className="text-2xl font-semibold mb-3">The Solution</h3>
                             <p className="text-white/70 leading-relaxed">
-                                TrustLens translates complex legal language into simple, actionable insights. In seconds, you know exactly what you&apos;re agreeing to and whether you should trust the company with your information.
+                                TrustLens uses AI to translate complex legal agreements into simple insights so users can quickly understand privacy risks and hidden clauses.
                             </p>
                         </div>
                     </motion.div>

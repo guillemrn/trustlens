@@ -8,29 +8,29 @@ export function HowItWorks() {
         {
             icon: <Globe className="w-8 h-8 text-brand-600" />,
             title: "1. Visit any website",
-            description: "Navigate to any site as you normally would. TrustLens works silently in the background."
+            description: "Navigate to any site normally."
         },
         {
             icon: <MousePointerClick className="w-8 h-8 text-brand-600" />,
             title: "2. Click the extension",
-            description: "When you reach a sign-up or checkout page, click the TrustLens icon in your browser."
+            description: "Open the extension when you sign up or checkout."
         },
         {
             icon: <ShieldCheck className="w-8 h-8 text-brand-600" />,
-            title: "3. See privacy risks",
-            description: "Instantly view a digestible summary of the exact risks hidden in the Terms of Service."
+            title: "3. See the real risks",
+            description: "Instantly view a simplified summary of the most important legal clauses."
         }
     ];
 
     return (
-        <section className="py-24">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-6"
+                        className="inline-block px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-sm font-medium mb-6 border border-accent-100"
                     >
                         How it works
                     </motion.div>
@@ -64,7 +64,7 @@ export function HowItWorks() {
                                 </div>
                             </div>
                             <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                            <p className="text-muted-foreground">{step.description}</p>
+                            <p className="text-muted-foreground max-w-[250px]">{step.description}</p>
                         </motion.div>
                     ))}
                 </div>
