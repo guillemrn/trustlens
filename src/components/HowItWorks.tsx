@@ -23,7 +23,7 @@ export function HowItWorks() {
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section id="how-it-works" className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <motion.div

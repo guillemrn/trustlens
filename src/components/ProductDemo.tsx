@@ -109,7 +109,12 @@ export function ProductDemo() {
                             {/* Extension Footer */}
                             <div className="bg-white border-t border-border p-3 flex justify-between items-center text-xs text-muted-foreground">
                                 <span>Last scanned: Just now</span>
-                                <button className="text-brand-600 font-medium hover:underline">Full Report</button>
+                                <button
+                                    onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+                                    className="text-brand-600 font-medium hover:underline cursor-pointer"
+                                >
+                                    Full Report
+                                </button>
                             </div>
                         </motion.div>
                     </div>

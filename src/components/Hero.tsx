@@ -46,11 +46,17 @@ export function Hero() {
                     transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
                 >
-                    <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2 group">
+                    <button
+                        onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+                        className="w-full sm:w-auto px-8 py-4 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2 group cursor-pointer"
+                    >
                         Get early access
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-foreground font-medium hover:bg-gray-50 transition-colors border shadow-sm flex items-center justify-center gap-2 group">
+                    <button
+                        onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
+                        className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-foreground font-medium hover:bg-gray-50 transition-colors border shadow-sm flex items-center justify-center gap-2 group cursor-pointer"
+                    >
                         <PlayCircle className="w-5 h-5 text-accent-500" />
                         See how it works
                     </button>
