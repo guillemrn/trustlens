@@ -5,7 +5,7 @@ import { BookOpen } from "lucide-react";
 
 export function WhyItMatters() {
     return (
-        <section className="py-24 bg-brand-950 text-white rounded-[3rem] mx-4 sm:mx-6 lg:mx-8 mb-24 overflow-hidden relative">
+        <section className="py-24 bg-brand-950 text-white rounded-[3rem] mx-4 sm:mx-6 lg:mx-8 my-24 overflow-hidden relative">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">

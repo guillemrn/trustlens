@@ -16,7 +16,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-sm font-medium mb-8 border border-brand-100/50"
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 text-sm font-medium mb-8 border border-brand-100/50 dark:border-brand-500/20"
                 >
                     <span className="flex h-2 w-2 rounded-full bg-brand-500"></span>
                     Introducing TrustLens
@@ -55,7 +55,7 @@ export function Hero() {
                     </button>
                     <button
                         onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
-                        className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-foreground font-medium hover:bg-gray-50 transition-colors border shadow-sm flex items-center justify-center gap-2 group cursor-pointer"
+                        className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-background text-foreground font-medium hover:bg-gray-50 dark:hover:bg-muted transition-colors border shadow-sm flex items-center justify-center gap-2 group cursor-pointer"
                     >
                         <PlayCircle className="w-5 h-5 text-accent-500" />
                         See how it works
@@ -70,17 +70,17 @@ export function Hero() {
                 >
                     <div className="flex -space-x-3 mb-1">
                         {/* Soft proxy logos/icons to represent platforms */}
-                        <div className="w-10 h-10 rounded-full bg-gray-50 border-2 border-white shadow-sm flex items-center justify-center z-40">
+                        <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-muted border-2 border-white dark:border-background shadow-sm flex items-center justify-center z-40">
                             <span className="font-bold text-red-600 text-xs">N</span>
                         </div>
-                        <div className="w-10 h-10 rounded-full bg-gray-50 border-2 border-white shadow-sm flex items-center justify-center z-30">
+                        <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-muted border-2 border-white dark:border-background shadow-sm flex items-center justify-center z-30">
                             <span className="font-bold text-orange-500 text-xs">A</span>
                         </div>
-                        <div className="w-10 h-10 rounded-full bg-gray-50 border-2 border-white shadow-sm flex items-center justify-center z-20">
+                        <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-muted border-2 border-white dark:border-background shadow-sm flex items-center justify-center z-20">
                             <span className="font-bold text-green-500 text-xs text-center leading-none">Sp</span>
                         </div>
-                        <div className="w-10 h-10 rounded-full bg-gray-50 border-2 border-white shadow-sm flex items-center justify-center z-10">
-                            <span className="font-bold text-blue-600 text-xs">f</span>
+                        <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-muted border-2 border-white dark:border-background shadow-sm flex items-center justify-center z-10">
+                            <span className="font-bold text-blue-600 dark:text-blue-400 text-xs">f</span>
                         </div>
                     </div>
                     <p className="text-sm text-muted-foreground flex items-center gap-2">

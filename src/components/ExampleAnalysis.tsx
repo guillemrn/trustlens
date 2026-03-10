@@ -1,11 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, ShieldAlert } from "lucide-react";
+import { AlertTriangle, ShieldAlert, ChevronRight } from "lucide-react";
+import { useState } from "react";
+
+function RiskItem({ risk, index }: { risk: { title: string; desc: string }, index: number }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+        <motion.li
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 + (index * 0.1) }}
+            className={`flex flex-col gap-2 text-sm bg-warning-50 dark:bg-warning-500/10 text-warning-900 dark:text-warning-400 border ${isExpanded ? 'border-warning-300 dark:border-warning-500/30 shadow-sm' : 'border-warning-100 dark:border-warning-500/20 hover:border-warning-200 dark:hover:border-warning-500/40'} p-3 rounded-xl cursor-pointer transition-all duration-200`}
+            onClick={() => setIsExpanded(!isExpanded)}
+        >
+            <div className="flex items-start gap-3">
+                <AlertTriangle className="w-4 h-4 text-warning-500 mt-0.5 shrink-0" />
+                <span className="font-medium flex-1">{risk.title}</span>
+                <ChevronRight className={`w-4 h-4 text-warning-400 shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''}`} />
+            </div>
+            {isExpanded && (
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    className="text-xs text-warning-800/80 dark:text-warning-500/80 ml-7 leading-relaxed"
+                >
+                    {risk.desc}
+                </motion.div>
+            )}
+        </motion.li>
+    );
+}
 
 export function ExampleAnalysis() {
     return (
-        <section className="py-24 bg-brand-50/30 border-y border-border">
+        <section className="py-24 bg-brand-50/30 dark:bg-brand-950/10 border-y border-border">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-20">
 
@@ -14,56 +45,84 @@ export function ExampleAnalysis() {
                         <motion.div
                             initial={{ opacity: 0, x: -40 }}
                             whileInView={{ opacity: 1, x: 0 }}
+                            whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0,0,0,0.15)" }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="w-full max-w-[400px] rounded-[24px] border border-border bg-white shadow-xl shadow-brand-900/5 p-6 md:p-8"
+                            className="w-full max-w-[360px] rounded-[24px] border border-border bg-white dark:bg-background shadow-xl shadow-brand-900/5 dark:shadow-none overflow-hidden flex flex-col"
                         >
-                            <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
+                            <div className="bg-white dark:bg-background border-b border-border p-5 flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl shadow-sm">
                                     N
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg leading-tight">Netflix</h3>
-                                    <p className="text-sm text-muted-foreground">Privacy Policy Analysis</p>
+                                    <p className="text-sm text-muted-foreground bg-muted px-2 py-0.5 rounded-md mt-1 inline-block">Privacy Policy Analysis</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-end justify-between mb-2">
-                                <span className="text-sm font-semibold text-muted-foreground">Trust Score</span>
-                                <span className="text-sm font-semibold text-danger-700 bg-danger-50 px-2 py-0.5 rounded-md border border-danger-200">High Risk</span>
+                            <div className="p-5 bg-gray-50/30 dark:bg-muted/30">
+                                <div className="bg-white dark:bg-background rounded-xl p-5 border border-border shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] dark:shadow-none mb-5">
+                                    <div className="flex items-end justify-between mb-2">
+                                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Trust Score</span>
+                                        <span className="text-xs font-semibold text-danger-700 dark:text-danger-400 bg-danger-100 dark:bg-danger-500/10 px-2 py-1 rounded-md border border-danger-200 dark:border-danger-500/20">High Risk</span>
+                                    </div>
+
+                                    <div className="flex items-baseline gap-1 mt-1">
+                                        <span className="text-5xl font-bold tracking-tight text-foreground">58</span>
+                                        <span className="text-muted-foreground font-medium">/100</span>
+                                    </div>
+
+                                    {/* Score bar */}
+                                    <div className="h-2.5 w-full bg-gray-100 dark:bg-muted rounded-full mt-4 overflow-hidden flex">
+                                        <motion.div
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: "58%" }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                                            className="h-full bg-danger-500 rounded-full"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-xs font-semibold mb-3 tracking-wide uppercase text-muted-foreground">Top concerns</h4>
+                                    <ul className="space-y-2.5">
+                                        {[
+                                            {
+                                                title: "Extensive data tracking",
+                                                desc: "Detailed logs of your viewing habits and device information are collected."
+                                            },
+                                            {
+                                                title: "Data sharing with partners",
+                                                desc: "Your data can be shared with promotional and marketing partners."
+                                            },
+                                            {
+                                                title: "Binding arbitration clause",
+                                                desc: "Requires you to resolve disputes outside of court without a jury."
+                                            }
+                                        ].map((risk, i) => (
+                                            <RiskItem key={i} risk={risk} index={i} />
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div className="flex items-baseline gap-1 mt-1 mb-5">
-                                <span className="text-4xl font-bold tracking-tight text-foreground">58</span>
-                                <span className="text-muted-foreground font-medium">/ 100</span>
+                            {/* Extension Footer */}
+                            <div className="bg-white dark:bg-background border-t border-border p-3 flex justify-between items-center text-xs text-muted-foreground">
+                                <span>Last scanned: Just now</span>
+                                <button
+                                    onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+                                    className="text-brand-600 font-medium hover:underline cursor-pointer"
+                                >
+                                    Full Report
+                                </button>
                             </div>
-
-                            <h4 className="text-sm font-semibold mb-3 tracking-wide uppercase text-muted-foreground">Top concerns</h4>
-                            <ul className="space-y-3">
-                                {[
-                                    "Extensive data tracking",
-                                    "Data sharing with partners",
-                                    "Binding arbitration clause"
-                                ].map((concern, i) => (
-                                    <motion.li
-                                        key={i}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.2 + (i * 0.1) }}
-                                        className="flex items-start gap-3 text-sm text-foreground bg-gray-50 p-3 rounded-xl border border-border/50"
-                                    >
-                                        <AlertTriangle className="w-4 h-4 text-warning-500 mt-0.5 shrink-0" />
-                                        <span className="font-medium">{concern}</span>
-                                    </motion.li>
-                                ))}
-                            </ul>
                         </motion.div>
                     </div>
 
                     {/* Text Content */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 mb-6 shadow-sm border border-brand-200">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 mb-6 shadow-sm border border-brand-200 dark:border-brand-500/20">
                             <ShieldAlert className="w-6 h-6" />
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-balance">

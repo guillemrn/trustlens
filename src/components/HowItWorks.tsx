@@ -23,14 +23,14 @@ export function HowItWorks() {
     ];
 
     return (
-        <section id="how-it-works" className="py-24 bg-white">
+        <section id="how-it-works" className="py-24 bg-white dark:bg-background">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-sm font-medium mb-6 border border-accent-100"
+                        className="inline-block px-3 py-1 rounded-full bg-accent-50 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400 text-sm font-medium mb-6 border border-accent-100 dark:border-accent-500/20"
                     >
                         How it works
                     </motion.div>
@@ -58,8 +58,8 @@ export function HowItWorks() {
                             transition={{ delay: 0.2 + (index * 0.1) }}
                             className="flex flex-col items-center text-center group"
                         >
-                            <div className="w-24 h-24 rounded-3xl bg-white border shadow-sm flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                                <div className="w-16 h-16 rounded-2xl bg-brand-50 flex items-center justify-center">
+                            <div className="w-24 h-24 rounded-3xl bg-white dark:bg-muted border border-border/50 dark:border-border shadow-sm flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300">
+                                <div className="w-16 h-16 rounded-2xl bg-brand-50 dark:bg-brand-500/10 flex items-center justify-center">
                                     {step.icon}
                                 </div>
                             </div>

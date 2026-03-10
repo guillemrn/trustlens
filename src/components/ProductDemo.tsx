@@ -1,17 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, ShieldAlert, FileText, CheckCircle2, ChevronDown, Chrome } from "lucide-react";
+import { AlertTriangle, ShieldAlert, FileText, CheckCircle2, ChevronDown, Chrome, ChevronRight } from "lucide-react";
+import { useState } from "react";
+
+function RiskItem({ risk, index }: { risk: { title: string; desc: string }, index: number }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+        <motion.li
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 + (index * 0.1) }}
+            className={`flex flex-col gap-2 text-sm bg-danger-50 dark:bg-danger-500/10 text-danger-900 dark:text-danger-400 border ${isExpanded ? 'border-danger-300 dark:border-danger-500/30 shadow-sm' : 'border-danger-100 dark:border-danger-500/20 hover:border-danger-200 dark:hover:border-danger-500/40'} p-3 rounded-xl cursor-pointer transition-all duration-200`}
+            onClick={() => setIsExpanded(!isExpanded)}
+        >
+            <div className="flex items-start gap-3">
+                <AlertTriangle className="w-4 h-4 text-danger-500 mt-0.5 shrink-0" />
+                <span className="font-medium flex-1">{risk.title}</span>
+                <ChevronRight className={`w-4 h-4 text-danger-400 shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''}`} />
+            </div>
+            {isExpanded && (
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    className="text-xs text-danger-800/80 dark:text-danger-500/80 ml-7 leading-relaxed"
+                >
+                    {risk.desc}
+                </motion.div>
+            )}
+        </motion.li>
+    );
+}
 
 export function ProductDemo() {
     return (
-        <section className="py-24 bg-linear-to-b from-brand-50/50 to-white">
+        <section className="py-24 bg-linear-to-b from-brand-50/50 dark:from-brand-950/10 to-white dark:to-background">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
 
                     {/* Content describing the demo */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-100 text-accent-600 mb-6 shadow-sm border border-accent-200/50">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-100 dark:bg-accent-500/10 text-accent-600 dark:text-accent-400 mb-6 shadow-sm border border-accent-200/50 dark:border-accent-500/20">
                             <Chrome className="w-6 h-6" />
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-balance">
@@ -43,35 +74,35 @@ export function ProductDemo() {
                         <motion.div
                             initial={{ opacity: 0, y: 40, scale: 0.95 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0,0,0,0.15)" }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="w-full max-w-[360px] rounded-[24px] border border-border bg-white shadow-2xl shadow-accent-900/10 overflow-hidden flex flex-col"
+                            className="w-full max-w-[360px] rounded-[24px] border border-border bg-white dark:bg-background shadow-2xl shadow-accent-900/10 dark:shadow-none overflow-hidden flex flex-col"
                         >
                             {/* Extension Header */}
-                            <div className="bg-white border-b border-border px-4 py-3 flex items-center justify-between">
+                            <div className="bg-white dark:bg-background border-b border-border px-4 py-3 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <ShieldAlert className="w-5 h-5 text-brand-600" />
                                     <span className="font-semibold text-sm">TrustLens</span>
                                 </div>
                                 <div className="flex items-center gap-1 text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md">
                                     <FileText className="w-3 h-3" /> Examply.com
-                                    <ChevronDown className="w-3 h-3 ml-1" />
                                 </div>
                             </div>
 
                             {/* Extension Body */}
-                            <div className="p-5 bg-gray-50/30">
-                                <div className="bg-white rounded-xl p-5 border border-border shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] mb-5">
+                            <div className="p-5 bg-gray-50/30 dark:bg-muted/30">
+                                <div className="bg-white dark:bg-background rounded-xl p-5 border border-border shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] dark:shadow-none mb-5">
                                     <div className="flex items-end justify-between mb-2">
                                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Trust Score</span>
-                                        <span className="text-xs font-semibold text-warning-700 bg-warning-100 px-2 py-1 rounded-md border border-warning-200">Medium Risk</span>
+                                        <span className="text-xs font-semibold text-warning-700 dark:text-warning-400 bg-warning-100 dark:bg-warning-500/10 px-2 py-1 rounded-md border border-warning-200 dark:border-warning-500/20">Medium Risk</span>
                                     </div>
                                     <div className="flex items-baseline gap-1 mt-1">
                                         <span className="text-5xl font-bold tracking-tight text-foreground">63</span>
                                         <span className="text-muted-foreground font-medium">/100</span>
                                     </div>
                                     {/* Score bar */}
-                                    <div className="h-2.5 w-full bg-gray-100 rounded-full mt-4 overflow-hidden flex">
+                                    <div className="h-2.5 w-full bg-gray-100 dark:bg-muted rounded-full mt-4 overflow-hidden flex">
                                         <motion.div
                                             initial={{ width: 0 }}
                                             whileInView={{ width: "63%" }}
@@ -86,28 +117,27 @@ export function ProductDemo() {
                                     <h4 className="text-xs font-semibold mb-3 tracking-wide uppercase text-muted-foreground">Top risks detected</h4>
                                     <ul className="space-y-2.5">
                                         {[
-                                            "Data shared with third-party partners",
-                                            "Mandatory arbitration clause",
-                                            "Automatic subscription renewal"
+                                            {
+                                                title: "Data shared with third-party partners",
+                                                desc: "Your browsing history and personal details can be sold to advertisers."
+                                            },
+                                            {
+                                                title: "Mandatory arbitration clause",
+                                                desc: "You waive your right to sue the company in court or join a class action."
+                                            },
+                                            {
+                                                title: "Automatic subscription renewal",
+                                                desc: "They can charge your card indefinitely without prior notice."
+                                            }
                                         ].map((risk, i) => (
-                                            <motion.li
-                                                key={i}
-                                                initial={{ opacity: 0, x: -10 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.4 + (i * 0.1) }}
-                                                className="flex items-start gap-3 text-sm bg-danger-50 text-danger-900 border border-danger-100 p-3 rounded-xl"
-                                            >
-                                                <AlertTriangle className="w-4 h-4 text-danger-500 mt-0.5 shrink-0" />
-                                                <span className="font-medium">{risk}</span>
-                                            </motion.li>
+                                            <RiskItem key={i} risk={risk} index={i} />
                                         ))}
                                     </ul>
                                 </div>
                             </div>
 
                             {/* Extension Footer */}
-                            <div className="bg-white border-t border-border p-3 flex justify-between items-center text-xs text-muted-foreground">
+                            <div className="bg-white dark:bg-background border-t border-border p-3 flex justify-between items-center text-xs text-muted-foreground">
                                 <span>Last scanned: Just now</span>
                                 <button
                                     onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}

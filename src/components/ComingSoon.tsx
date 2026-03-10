@@ -1,30 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Chrome, Sparkles, AlertTriangle, Database } from "lucide-react";
+import { Activity, AlertTriangle, FileText, Lock } from "lucide-react";
 
 export function ComingSoon() {
     const features = [
         {
-            icon: <Chrome className="w-5 h-5 text-accent-600" />,
-            text: "Chrome browser extension"
-        },
-        {
-            icon: <Sparkles className="w-5 h-5 text-brand-600" />,
-            text: "AI-powered policy analysis"
+            icon: <Activity className="w-5 h-5 text-accent-600" />,
+            title: "Instant Trust Score",
+            description: "Know immediately if a website is safe (Green) or risky (Red)."
         },
         {
             icon: <AlertTriangle className="w-5 h-5 text-warning-500" />,
-            text: "Real-time risk detection"
+            title: "Hidden Clause Alerts",
+            description: "We flag arbitration clauses, data selling, and auto-renewals."
         },
         {
-            icon: <Database className="w-5 h-5 text-blue-500" />,
-            text: "Growing database of analyzed policies"
+            icon: <FileText className="w-5 h-5 text-brand-600" />,
+            title: "Plain English Summaries",
+            description: "Goodbye legal jargon. Understand your rights in seconds."
+        },
+        {
+            icon: <Lock className="w-5 h-5 text-blue-500" />,
+            title: "Private",
+            description: "Your browsing data never leaves your device. We only read the terms."
         }
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-background">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-3xl mx-auto text-center mb-16">
                     <motion.div
@@ -33,7 +37,7 @@ export function ComingSoon() {
                         viewport={{ once: true }}
                         className="inline-block px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-sm font-medium mb-6 border border-accent-100"
                     >
-                        Coming Soon
+                        Features
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -61,16 +65,19 @@ export function ComingSoon() {
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.1)" }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.2 + (index * 0.1) }}
-                            className="flex items-center p-6 bg-gray-50 rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow group"
+                            transition={{ delay: 0.2 + (index * 0.1), duration: 0.2 }}
+                            className="flex flex-col sm:flex-row items-start sm:items-center p-6 bg-gray-50 dark:bg-muted/50 rounded-2xl border border-border/50 dark:border-border group gap-4"
                         >
-                            <div className="mr-4 w-10 h-10 rounded-full bg-white flex items-center justify-center border shadow-sm group-hover:scale-110 transition-transform">
+                            <div className="shrink-0 w-12 h-12 rounded-full bg-white dark:bg-background flex items-center justify-center border border-border/50 dark:border-border shadow-sm group-hover:scale-110 transition-transform">
                                 {feature.icon}
                             </div>
-                            <span className="font-medium text-foreground text-lg">{feature.text}</span>
-                            <div className="ml-auto">
-                                <CheckCircle2 className="w-5 h-5 text-brand-500 opacity-50" />
+                            <div className="flex flex-col">
+                                <span className="font-semibold text-foreground text-lg">{feature.title}</span>
+                                <span className="text-muted-foreground text-sm leading-relaxed mt-1">
+                                    {feature.description}
+                                </span>
                             </div>
                         </motion.div>
                     ))}
