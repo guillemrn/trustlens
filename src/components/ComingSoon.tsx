@@ -35,7 +35,7 @@ export function ComingSoon() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-sm font-medium mb-6 border border-accent-100"
+                        className="inline-block px-3 py-1 rounded-full bg-accent-50 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400 text-sm font-medium mb-6 border border-accent-100 dark:border-accent-500/20"
                     >
                         Features
                     </motion.div>
