@@ -58,9 +58,9 @@ export function Waitlist() {
                             <div className="w-16 h-16 bg-brand-500 rounded-full flex items-center justify-center mb-6 text-white">
                                 <CheckCircle2 className="w-10 h-10" />
                             </div>
-                            <h2 className="text-3xl font-bold mb-4">You&apos;re on the list!</h2>
+                            <h2 className="text-3xl font-bold mb-4">🎉 You&apos;re on the list!</h2>
                             <p className="text-lg text-muted-foreground max-w-md mx-auto">
-                                Thank you for your interest. We&apos;ll notify you as soon as TrustLens is ready for early access.
+                                Check your inbox for a quick question. (Psst... if you don&apos;t see it, check your Promotions or Spam folder and drag it to your Primary inbox so you don&apos;t miss your early access link).
                             </p>
                         </motion.div>
                     ) : (
