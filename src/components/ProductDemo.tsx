@@ -60,7 +60,7 @@ export function ProductDemo() {
                                 "Warns about auto-renewals"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center shrink-0">
+                                    <div className="w-6 h-6 rounded-full bg-brand-100 dark:bg-brand-500/10 flex items-center justify-center shrink-0">
                                         <CheckCircle2 className="w-4 h-4 text-brand-600" />
                                     </div>
                                     <span className="font-medium text-foreground">{item}</span>

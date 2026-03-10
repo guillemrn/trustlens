@@ -17,9 +17,27 @@ export function Waitlist() {
         if (!isValidEmail(email)) return;
 
         setStatus("submitting");
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        setStatus("success");
+
+        try {
+            const response = await fetch("https://hook.us2.make.com/gp4msrrglip6ye6nxq0wnnxcu1bqddff", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setEmail("");
+            } else {
+                console.error("Failed to submit to waitlist");
+                setStatus("idle");
+            }
+        } catch (error) {
+            console.error("Error submitting to waitlist:", error);
+            setStatus("idle");
+        }
     };
 
     return (
@@ -35,7 +53,7 @@ export function Waitlist() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="bg-brand-50 border border-brand-100 rounded-3xl p-8 py-12 flex flex-col items-center"
+                            className="bg-brand-50 dark:bg-brand-500/10 border border-brand-100 dark:border-brand-500/20 rounded-3xl p-8 py-12 flex flex-col items-center"
                         >
                             <div className="w-16 h-16 bg-brand-500 rounded-full flex items-center justify-center mb-6 text-white">
                                 <CheckCircle2 className="w-10 h-10" />

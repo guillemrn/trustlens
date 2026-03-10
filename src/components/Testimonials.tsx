@@ -56,7 +56,7 @@ export function Testimonials() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 + (index * 0.1) }}
-                            className="bg-white p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+                            className="bg-white dark:bg-muted/50 p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
                         >
                             <div>
                                 <div className="flex items-center gap-1 mb-6">
@@ -69,7 +69,7 @@ export function Testimonials() {
                                 </p>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-bold shrink-0 border border-brand-200">
+                                <div className="w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-500/10 flex items-center justify-center text-brand-700 dark:text-brand-400 font-bold shrink-0 border border-brand-200 dark:border-brand-500/20">
                                     {testimonial.avatar}
                                 </div>
                                 <div>
