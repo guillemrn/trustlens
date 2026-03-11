@@ -15,8 +15,30 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "TrustLens | Understand Terms of Service in seconds",
-  description: "TrustLens uses AI to analyze privacy policies and reveal the real risks before you click accept.",
+  title: "TrustLens | Spot Hidden Subscriptions & TOS Traps with AI",
+  description: "An AI Chrome extension that instantly audits Terms of Service. Protect your money, your data, and your copyright before you click \"Accept\".",
+  openGraph: {
+    title: "TrustLens | Don’t sign away your rights blindly.",
+    description: "Instantly spot auto-renewals, data brokers, and copyright traps in any Terms of Service using AI. Join the waitlist.",
+    url: "https://gettrustlens.com",
+    siteName: "TrustLens",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TrustLens AI Chrome Extension",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TrustLens | Spot Hidden Subscriptions & TOS Traps with AI",
+    description: "Instantly spot auto-renewals, data brokers, and copyright traps in any Terms of Service using AI.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
