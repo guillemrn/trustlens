@@ -19,7 +19,12 @@ export function Waitlist() {
         setStatus("submitting");
 
         try {
-            const response = await fetch("https://hook.us2.make.com/gp4msrrglip6ye6nxq0wnnxcu1bqddff", {
+            const webhookUrl = process.env.NEXT_PUBLIC_MAKE_WEBHOOK_URL;
+            if (!webhookUrl) {
+                throw new Error("Make.com webhook URL is not defined");
+            }
+
+            const response = await fetch(webhookUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
