@@ -38,15 +38,15 @@ export function WhyItMatters() {
                         className="grid sm:grid-cols-2 gap-8 text-left bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-md"
                     >
                         <div>
-                            <h3 className="text-2xl font-semibold mb-3">The Problem</h3>
+                            <h3 className="text-2xl font-semibold mb-3">The Problem: The Paradox of Convenience</h3>
                             <p className="text-white/70 leading-relaxed">
-                                The average privacy policy takes around 15–20 minutes to read and is written in complex legal language. Most people accept them without understanding the implications.
+                                While we worry about Big Tech, the real danger is the &ldquo;Wild West&rdquo; of the internet: random AI tools and SaaS where users expose their money and intellectual property without even knowing it.
                             </p>
                         </div>
                         <div>
-                            <h3 className="text-2xl font-semibold mb-3">The Solution</h3>
+                            <h3 className="text-2xl font-semibold mb-3">The Solution: A Strategic Shield</h3>
                             <p className="text-white/70 leading-relaxed">
-                                TrustLens uses AI to translate complex legal agreements into simple insights so users can quickly understand privacy risks and hidden clauses.
+                                TrustLens hunts for three specific threats: <strong>Financial Traps</strong> (hidden subscriptions), <strong>IP Theft</strong> (abusive AI copyright clauses), and <strong>Data Brokers</strong> selling your personal info.
                             </p>
                         </div>
                     </motion.div>

@@ -51,12 +51,12 @@ export function ExampleAnalysis() {
                             className="w-full max-w-[360px] rounded-[24px] border border-border bg-white dark:bg-background shadow-xl shadow-brand-900/5 dark:shadow-none overflow-hidden flex flex-col"
                         >
                             <div className="bg-white dark:bg-background border-b border-border p-5 flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl shadow-sm">
-                                    N
+                                <div className="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-xl shadow-sm">
+                                    M
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg leading-tight">Netflix</h3>
-                                    <p className="text-sm text-muted-foreground bg-muted px-2 py-0.5 rounded-md mt-1 inline-block">Privacy Policy Analysis</p>
+                                    <h3 className="font-bold text-lg leading-tight">MagicAI</h3>
+                                    <p className="text-sm text-muted-foreground bg-muted px-2 py-0.5 rounded-md mt-1 inline-block">Generic SaaS Analysis</p>
                                 </div>
                             </div>
 
@@ -89,16 +89,16 @@ export function ExampleAnalysis() {
                                     <ul className="space-y-2.5">
                                         {[
                                             {
-                                                title: "Extensive data tracking",
-                                                desc: "Detailed logs of your viewing habits and device information are collected."
+                                                title: "Perpetual IP Rights",
+                                                desc: "Platform demands perpetual and royalty-free rights to any content you generate or upload."
                                             },
                                             {
-                                                title: "Data sharing with partners",
-                                                desc: "Your data can be shared with promotional and marketing partners."
+                                                title: "Hidden Auto-Renewal",
+                                                desc: "Subsequent billing cycles trigger automatically with high barriers to cancellation."
                                             },
                                             {
-                                                title: "Binding arbitration clause",
-                                                desc: "Requires you to resolve disputes outside of court without a jury."
+                                                title: "Data Broker Sharing",
+                                                desc: "Your personal identifiers are shared with third-party brokers for marketing purposes."
                                             }
                                         ].map((risk, i) => (
                                             <RiskItem key={i} risk={risk} index={i} />
@@ -126,10 +126,10 @@ export function ExampleAnalysis() {
                             <ShieldAlert className="w-6 h-6" />
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-balance">
-                            Know exactly what you<br className="hidden lg:block" /> are agreeing to.
+                            Shield your money and <br className="hidden lg:block" /> professional work.
                         </h2>
                         <p className="text-lg text-muted-foreground mb-6 text-balance">
-                            Even popular services have clauses that compromise your privacy or waive your legal rights. TrustLens brings these hidden terms to the surface.
+                            New AI tools and random SaaS often hide clauses that claim ownership of your work or lock you into expensive subscriptions. TrustLens surfaces these traps instantly.
                         </p>
                         <p className="text-muted-foreground text-balance border-l-2 border-brand-500 pl-4 py-1 italic">
                             &quot;We surface the risks, so you make informed choices without needing a law degree.&quot;
