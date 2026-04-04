@@ -1,32 +1,35 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { Activity, AlertTriangle, FileText, Lock } from "lucide-react";
+import {useTranslations} from 'next-intl';
 
 export function ComingSoon() {
+    const t = useTranslations('ComingSoon');
+
     const features = [
         {
             icon: <Activity className="w-5 h-5 text-accent-600" />,
-            title: "Instant Trust Score",
-            description: "Know immediately if a website is safe (Green) or risky (Red)."
+            title: t('feature_1_title'),
+            description: t('feature_1_desc')
         },
         {
             icon: <AlertTriangle className="w-5 h-5 text-warning-500" />,
-            title: "Hidden Clause Alerts",
-            description: "We flag arbitration clauses, data selling, and auto-renewals."
+            title: t('feature_2_title'),
+            description: t('feature_2_desc')
         },
         {
             icon: <FileText className="w-5 h-5 text-brand-600" />,
-            title: "Plain English Summaries",
-            description: "Goodbye legal jargon. Understand your rights in seconds."
+            title: t('feature_3_title'),
+            description: t('feature_3_desc')
         },
         {
             icon: <Lock className="w-5 h-5 text-blue-500" />,
-            title: "Private",
-            description: "Your browsing data never leaves your device. We only read the terms."
+            title: t('feature_4_title'),
+            description: t('feature_4_desc')
         }
     ];
-
+ 
     return (
         <section className="py-24 bg-white dark:bg-background">
             <div className="container mx-auto px-4 sm:px-6">
@@ -37,7 +40,7 @@ export function ComingSoon() {
                         viewport={{ once: true }}
                         className="inline-block px-3 py-1 rounded-full bg-accent-50 dark:bg-accent-500/10 text-accent-700 dark:text-accent-400 text-sm font-medium mb-6 border border-accent-100 dark:border-accent-500/20"
                     >
-                        Features
+                        {t('badge')}
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -46,7 +49,7 @@ export function ComingSoon() {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
                     >
-                        Everything you need.
+                        {t('title')}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -55,10 +58,10 @@ export function ComingSoon() {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-muted-foreground"
                     >
-                        We are building a comprehensive toolset to bring transparency to the internet.
+                        {t('description')}
                     </motion.p>
                 </div>
-
+ 
                 <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
                     {features.map((feature, index) => (
                         <motion.div

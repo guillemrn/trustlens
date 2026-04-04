@@ -1,0 +1,120 @@
+{
+  "Metadata": {
+    "title": "TrustLens | Spot Hidden Subscriptions & TOS Traps with AI",
+    "description": "An AI Chrome extension that instantly audits Terms of Service. Protect your money, your data, and your copyright before you click \"Accept\"."
+  },
+  "Hero": {
+    "badge": "Introducing TrustLens",
+    "title_start": "Your ",
+    "title_gradient": "Financial & Professional Shield",
+    "title_end": " in the AI era",
+    "description": "Stop clicking “Accept” blindly. TrustLens hunts for hidden subscriptions, IP theft, and data brokers in the “Wild West” of new AI tools and SaaS.",
+    "cta_primary": "Get early access",
+    "cta_secondary": "See how it works",
+    "footer": "Works with policies from Generative AI, PDF Compressors, and new SaaS platforms."
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  },
+  "WhyItMatters": {
+    "title": "Terms of Service are broken. <br></br> <accent>We fix them.</accent>",
+    "problem_title": "The Problem: The Convenience Trap",
+    "problem_desc": "While we worry about Big Tech, the real danger is the \"Wild West\" of the internet: random SaaS and AI tools where users expose their money & IP without knowing.",
+    "solution_title": "The Solution: A Strategic Shield",
+    "solution_desc": "TrustLens scans for three specific threats: <strong>Financial Traps</strong> (hidden subscriptions), <strong>IP Theft</strong> (abusive AI copyright clauses), and <strong>Data Brokers</strong> who sell your personal info."
+  },
+  "ProductDemo": {
+    "title": "See the real risks. <br></br> Before you click accept.",
+    "description": "Our AI scans thousands of words of legal text to highlight the clauses that matter most.",
+    "feature_1": "Flags hidden arbitration clauses",
+    "feature_2": "Detects aggressive data sharing",
+    "feature_3": "Warns about auto-renewals",
+    "ui": {
+      "trust_score": "Trust Score",
+      "risk_level": "Medium Risk",
+      "top_risks": "Top risks detected",
+      "risk_1_title": "Data shared with third-party partners",
+      "risk_1_desc": "Your browsing history and personal details can be sold to advertisers.",
+      "risk_2_title": "Mandatory arbitration clause",
+      "risk_2_desc": "You waive your right to sue the company in court or join a class action.",
+      "risk_3_title": "Automatic subscription renewal",
+      "risk_3_desc": "They can charge your card indefinitely without prior notice.",
+      "last_scanned": "Last scanned: Just now",
+      "full_report": "Full Report"
+    }
+  },
+  "HowItWorks": {
+    "badge": "How it works",
+    "title": "Three steps to clearer terms",
+    "step_1_title": "1. Visit any website",
+    "step_1_desc": "Navigate to any site normally.",
+    "step_2_title": "2. Click the extension",
+    "step_2_desc": "Open the extension when you sign up or checkout.",
+    "step_3_title": "3. See the real risks",
+    "step_3_desc": "Instantly view a simplified summary of the most important legal clauses."
+  },
+  "ExampleAnalysis": {
+    "title": "Shield your money and <br></br> professional work.",
+    "description": "New AI tools and random SaaS often hide clauses that claim ownership of your work or lock you into expensive subscriptions. TrustLens surfaces these traps instantly.",
+    "quote": "\"We surface the risks, so you make informed choices without needing a law degree.\"",
+    "ui": {
+      "saas_analysis": "Generic SaaS Analysis",
+      "trust_score": "Trust Score",
+      "risk_level": "High Risk",
+      "top_concerns": "Top concerns",
+      "concern_1_title": "Perpetual IP Rights",
+      "concern_1_desc": "Platform demands perpetual and royalty-free rights to any content you generate or upload.",
+      "concern_2_title": "Hidden Auto-Renewal",
+      "concern_2_desc": "Subsequent billing cycles trigger automatically with high barriers to cancellation.",
+      "concern_3_title": "Data Broker Sharing",
+      "concern_3_desc": "Your personal identifiers are shared with third-party brokers for marketing purposes.",
+      "last_scanned": "Last scanned: Just now",
+      "full_report": "Full Report"
+    }
+  },
+  "ComingSoon": {
+    "badge": "Features",
+    "title": "Everything you need.",
+    "description": "We are building a comprehensive toolset to bring transparency to the internet.",
+    "feature_1_title": "Instant Trust Score",
+    "feature_1_desc": "Know immediately if a website is safe (Green) or risky (Red).",
+    "feature_2_title": "Hidden Clause Alerts",
+    "feature_2_desc": "We flag arbitration clauses, data selling, and auto-renewals.",
+    "feature_3_title": "Plain English Summaries",
+    "feature_3_desc": "Goodbye legal jargon. Understand your rights in seconds.",
+    "feature_4_title": "Private",
+    "feature_4_desc": "Your browsing data never leaves your device. We only read the terms."
+  },
+  "FAQ": {
+    "badge": "Questions & Answers",
+    "title": "Frequently asked questions",
+    "q1": "Do you collect or sell my browsing data?",
+    "a1": "No. TrustLens is designed with privacy-first principles. The extension only reads the Terms of Service pages you visit, and we never collect, store, or sell your personal browsing history.",
+    "q2": "Is TrustLens free to use?",
+    "a2": "Yes, our core scanning and summarization features are entirely free during our Early Access phase. In the future, we may introduce advanced premium features, but basic transparency will always be accessible.",
+    "q3": "Which browsers does it support?",
+    "a3": "TrustLens is currently being built for Google Chrome (and other Chromium-based browsers like Brave, Edge, and Arc). We plan to add native support for Firefox and Safari shortly after launch.",
+    "q4": "How accurate is the AI scanner?",
+    "a4": "We use state-of-the-art AI models, combined with highly specialized legal prompts, to extract and flag common hidden clauses with high accuracy. However, TrustLens is designed to assist you in understanding complex terms quickly, not to replace formal legal advice."
+  },
+  "Waitlist": {
+    "title": "Stop guessing. Start knowing.",
+    "description": "Join the waitlist to be among the first to try TrustLens.",
+    "placeholder": "Enter your email address",
+    "button_idle": "Get early access",
+    "button_submitting": "Joining...",
+    "disclaimer": "No spam, ever. Unsubscribe at any time.",
+    "success_title": "🎉 You're on the list!",
+    "success_desc": "Check your inbox for a quick question. (Psst... if you don't see it, check your Promotions or Spam folder and drag it to your Primary inbox so you don't miss your early access link)."
+  },
+  "Footer": {
+    "privacy": "Our Honest Privacy",
+    "contact": "Contact",
+    "theme_switch": "Current theme: {theme}. Click to change.",
+    "disclaimer": "Disclaimer: TrustLens provides automated summaries of public terms of service and privacy policies. Results are generated using AI and may not reflect the full legal meaning of the document.",
+    "rights": "© 2026 TrustLens. All rights reserved.",
+    "modal_title": "Our Honest Privacy",
+    "modal_desc": "We only collect your email to notify you of our launch. We use Supabase to store it securely. We will never sell it or track your browsing. That's it.",
+    "modal_btn": "Understood"
+  }
+}

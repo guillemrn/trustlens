@@ -1,0 +1,120 @@
+{
+  "Metadata": {
+    "title": "TrustLens | Detecta Suscripciones Ocultas y Trampas de TyC con IA",
+    "description": "Una extensión de Chrome con IA que audita instantáneamente los Términos de Servicio. Protege tu dinero, tus datos y tus derechos de autor antes de hacer clic en \"Aceptar\"."
+  },
+  "Hero": {
+    "badge": "Presentamos TrustLens",
+    "title_start": "Tu ",
+    "title_gradient": "Escudo Financiero y Profesional",
+    "title_end": " en la era de la IA",
+    "description": "Deja de hacer clic en \"Aceptar\" a ciegas. TrustLens busca suscripciones ocultas, robo de propiedad intelectual y corredores de datos en el \"Salvaje Oeste\" de las nuevas herramientas de IA y SaaS.",
+    "cta_primary": "Obtén acceso anticipado",
+    "cta_secondary": "Mira cómo funciona",
+    "footer": "Funciona con políticas de IA generativa, compresores de PDF y nuevas plataformas SaaS."
+  },
+  "LanguageSwitcher": {
+    "label": "Idioma"
+  },
+  "WhyItMatters": {
+    "title": "Los Términos de Servicio están rotos. <br></br> <accent>Nosotros los arreglamos.</accent>",
+    "problem_title": "El Problema: El Paradoja de la Conveniencia",
+    "problem_desc": "Mientras nos preocupamos por las grandes tecnológicas, el peligro real es el \"Salvaje Oeste\" de internet: herramientas de IA y SaaS aleatorias donde los usuarios exponen su dinero y propiedad intelectual sin saberlo.",
+    "solution_title": "La Solución: Un Escudo Estratégico",
+    "solution_desc": "TrustLens busca tres amenazas específicas: <strong>Trampas Financieras</strong> (suscripciones ocultas), <strong>Robo de PI</strong> (cláusulas abusivas de derechos de autor de IA) y <strong>Corredores de Datos</strong> que venden tu información personal."
+  },
+  "ProductDemo": {
+    "title": "Vea los riesgos reales. <br></br> Antes de darle a aceptar.",
+    "description": "Nuestra IA escanea miles de palabras de texto legal para resaltar las cláusulas que más importan.",
+    "feature_1": "Señala cláusulas de arbitraje ocultas",
+    "feature_2": "Detecta intercambio agresivo de datos",
+    "feature_3": "Advierte sobre renovaciones automáticas",
+    "ui": {
+      "trust_score": "Indicador de Confianza",
+      "risk_level": "Riesgo Medio",
+      "top_risks": "Principales riesgos detectados",
+      "risk_1_title": "Datos compartidos con socios",
+      "risk_1_desc": "Tu historial de navegación y datos personales pueden ser vendidos a anunciantes.",
+      "risk_2_title": "Cláusula de arbitraje obligatorio",
+      "risk_2_desc": "Renuncias a tu derecho a demandar a la empresa en tribunales o unirte a una demanda colectiva.",
+      "risk_3_title": "Renovación automática de suscripción",
+      "risk_3_desc": "Pueden cobrar a tu tarjeta indefinidamente sin previo aviso.",
+      "last_scanned": "Último escaneo: Justo ahora",
+      "full_report": "Reporte Completo"
+    }
+  },
+  "HowItWorks": {
+    "badge": "Cómo funciona",
+    "title": "Tres pasos para términos más claros",
+    "step_1_title": "1. Visita cualquier web",
+    "step_1_desc": "Navega a cualquier sitio normalmente.",
+    "step_2_title": "2. Haz clic en la extensión",
+    "step_2_desc": "Abre la extensión cuando te registres o pagues.",
+    "step_3_title": "3. Ve los riesgos reales",
+    "step_3_desc": "Mira instantáneamente un resumen simplificado de las cláusulas legales más importantes."
+  },
+  "ExampleAnalysis": {
+    "title": "Protege tu dinero y <br></br> tu trabajo profesional.",
+    "description": "Las nuevas herramientas de IA y los SaaS aleatorios a menudo ocultan cláusulas que reclaman la propiedad de tu trabajo o te atan a costosas suscripciones. TrustLens saca a la luz estas trampas al instante.",
+    "quote": "\"Exponemos los riesgos, para que tomes decisiones informadas sin necesitar un título en derecho.\"",
+    "ui": {
+      "saas_analysis": "Análisis Genérico de SaaS",
+      "trust_score": "Indicador de Confianza",
+      "risk_level": "Alto Riesgo",
+      "top_concerns": "Principales preocupaciones",
+      "concern_1_title": "Derechos de PI Perpetuos",
+      "concern_1_desc": "La plataforma exige derechos perpetuos y libres de regalías sobre cualquier contenido que generes o subas.",
+      "concern_2_title": "Renovación Automática Oculta",
+      "concern_2_desc": "Los ciclos de facturación posteriores se activan automáticamente con altas barreras para la cancelación.",
+      "concern_3_title": "Intercambio con Corredores de Datos",
+      "concern_3_desc": "Tus identificadores personales se comparten con corredores de terceros para fines de marketing.",
+      "last_scanned": "Último escaneo: Justo ahora",
+      "full_report": "Reporte Completo"
+    }
+  },
+  "ComingSoon": {
+    "badge": "Características",
+    "title": "Todo lo que necesitas.",
+    "description": "Estamos construyendo un conjunto completo de herramientas para brindar transparencia a internet.",
+    "feature_1_title": "Puntaje de Confianza Instantáneo",
+    "feature_1_desc": "Sabe de inmediato si un sitio web es seguro (Verde) o riesgoso (Rojo).",
+    "feature_2_title": "Alertas de Cláusulas Ocultas",
+    "feature_2_desc": "Señalamos cláusulas de arbitraje, venta de datos y renovaciones automáticas.",
+    "feature_3_title": "Resúmenes en Lenguaje Claro",
+    "feature_3_desc": "Adiós a la jerga legal. Entiende tus derechos en segundos.",
+    "feature_4_title": "Privado",
+    "feature_4_desc": "Tus datos de navegación nunca salen de tu dispositivo. Solo leemos los términos."
+  },
+  "FAQ": {
+    "badge": "Preguntas y Respuestas",
+    "title": "Preguntas frecuentes",
+    "q1": "¿Recopilan o venden mis datos de navegación?",
+    "a1": "No. TrustLens está diseñado con principios que priorizan la privacidad. La extensión solo lee las páginas de Términos de Servicio que visitas y nunca recopilamos, almacenamos ni vendemos tu historial de navegación personal.",
+    "q2": "¿TrustLens es gratuito?",
+    "a2": "Sí, nuestras funciones principales de escaneo y resumen son totalmente gratuitas durante nuestra fase de Acceso Anticipado. En el futuro, podríamos introducir funciones premium avanzadas, pero la transparencia básica siempre será accesible.",
+    "q3": "¿Qué navegadores soporta?",
+    "a3": "Actualmente, TrustLens se está desarrollando para Google Chrome (y otros navegadores basados en Chromium como Brave, Edge y Arc). Planeamos agregar soporte nativo para Firefox y Safari poco después del lanzamiento.",
+    "q4": "¿Qué tan preciso es el escáner de IA?",
+    "a4": "Usamos modelos de IA de última generación, combinados con instrucciones legales altamente especializadas, para extraer y señalar cláusulas ocultas comunes con gran precisión. Sin embargo, TrustLens está diseñado para ayudarte a comprender términos complejos rápidamente, no para reemplazar el asesoramiento legal formal."
+  },
+  "Waitlist": {
+    "title": "Deja de adivinar. Empieza a saber.",
+    "description": "Únete a la lista de espera para ser de los primeros en probar TrustLens.",
+    "placeholder": "Ingresa tu dirección de correo electrónico",
+    "button_idle": "Obtén acceso anticipado",
+    "button_submitting": "Uniéndose...",
+    "disclaimer": "Sin spam, jamás. Date de baja en cualquier momento.",
+    "success_title": "🎉 ¡Estás en la lista!",
+    "success_desc": "Revisa tu bandeja de entrada para una pregunta rápida. (Pst... si no lo ves, revisa tu carpeta de Promociones o Spam y arrástralo a tu bandeja Principal para que no te pierdas el enlace de acceso anticipado)."
+  },
+  "Footer": {
+    "privacy": "Nuestra Privacidad Honesta",
+    "contact": "Contacto",
+    "theme_switch": "Tema actual: {theme}. Haz clic para cambiar.",
+    "disclaimer": "Descargo de responsabilidad: TrustLens proporciona resúmenes automáticos de términos de servicio y políticas de privacidad públicos. Los resultados son generados por IA y pueden no reflejar el significado legal completo del documento.",
+    "rights": "© 2026 TrustLens. Todos los derechos reservados.",
+    "modal_title": "Nuestra Privacidad Honesta",
+    "modal_desc": "Solo recopilamos tu correo electrónico para notificarte de nuestro lanzamiento. Usamos Supabase para almacenarlo de forma segura. Nunca lo venderemos ni rastrearemos tu navegación. Eso es todo.",
+    "modal_btn": "Entendido"
+  }
+}

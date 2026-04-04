@@ -1,12 +1,13 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { AlertTriangle, ShieldAlert, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import {useTranslations} from 'next-intl';
 
 function RiskItem({ risk, index }: { risk: { title: string; desc: string }, index: number }) {
     const [isExpanded, setIsExpanded] = useState(false);
-
+ 
     return (
         <motion.li
             initial={{ opacity: 0, x: -10 }}
@@ -33,13 +34,15 @@ function RiskItem({ risk, index }: { risk: { title: string; desc: string }, inde
         </motion.li>
     );
 }
-
+ 
 export function ExampleAnalysis() {
+    const t = useTranslations('ExampleAnalysis');
+
     return (
         <section className="py-24 bg-brand-50/30 dark:bg-brand-950/10 border-y border-border">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-20">
-
+ 
                     {/* Example Card UI */}
                     <div className="w-full md:w-1/2 flex justify-center md:justify-start">
                         <motion.div
@@ -56,22 +59,22 @@ export function ExampleAnalysis() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg leading-tight">MagicAI</h3>
-                                    <p className="text-sm text-muted-foreground bg-muted px-2 py-0.5 rounded-md mt-1 inline-block">Generic SaaS Analysis</p>
+                                    <p className="text-sm text-muted-foreground bg-muted px-2 py-0.5 rounded-md mt-1 inline-block">{t('ui.saas_analysis')}</p>
                                 </div>
                             </div>
-
+ 
                             <div className="p-5 bg-gray-50/30 dark:bg-muted/30">
                                 <div className="bg-white dark:bg-background rounded-xl p-5 border border-border shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] dark:shadow-none mb-5">
                                     <div className="flex items-end justify-between mb-2">
-                                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Trust Score</span>
-                                        <span className="text-xs font-semibold text-danger-700 dark:text-danger-400 bg-danger-100 dark:bg-danger-500/10 px-2 py-1 rounded-md border border-danger-200 dark:border-danger-500/20">High Risk</span>
+                                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t('ui.trust_score')}</span>
+                                        <span className="text-xs font-semibold text-danger-700 dark:text-danger-400 bg-danger-100 dark:bg-danger-500/10 px-2 py-1 rounded-md border border-danger-200 dark:border-danger-500/20">{t('ui.risk_level')}</span>
                                     </div>
-
+ 
                                     <div className="flex items-baseline gap-1 mt-1">
                                         <span className="text-5xl font-bold tracking-tight text-foreground">58</span>
                                         <span className="text-muted-foreground font-medium">/100</span>
                                     </div>
-
+ 
                                     {/* Score bar */}
                                     <div className="h-2.5 w-full bg-gray-100 dark:bg-muted rounded-full mt-4 overflow-hidden flex">
                                         <motion.div
@@ -83,22 +86,22 @@ export function ExampleAnalysis() {
                                         />
                                     </div>
                                 </div>
-
+ 
                                 <div>
-                                    <h4 className="text-xs font-semibold mb-3 tracking-wide uppercase text-muted-foreground">Top concerns</h4>
+                                    <h4 className="text-xs font-semibold mb-3 tracking-wide uppercase text-muted-foreground">{t('ui.top_concerns')}</h4>
                                     <ul className="space-y-2.5">
                                         {[
                                             {
-                                                title: "Perpetual IP Rights",
-                                                desc: "Platform demands perpetual and royalty-free rights to any content you generate or upload."
+                                                title: t('ui.concern_1_title'),
+                                                desc: t('ui.concern_1_desc')
                                             },
                                             {
-                                                title: "Hidden Auto-Renewal",
-                                                desc: "Subsequent billing cycles trigger automatically with high barriers to cancellation."
+                                                title: t('ui.concern_2_title'),
+                                                desc: t('ui.concern_2_desc')
                                             },
                                             {
-                                                title: "Data Broker Sharing",
-                                                desc: "Your personal identifiers are shared with third-party brokers for marketing purposes."
+                                                title: t('ui.concern_3_title'),
+                                                desc: t('ui.concern_3_desc')
                                             }
                                         ].map((risk, i) => (
                                             <RiskItem key={i} risk={risk} index={i} />
@@ -106,36 +109,38 @@ export function ExampleAnalysis() {
                                     </ul>
                                 </div>
                             </div>
-
+ 
                             {/* Extension Footer */}
                             <div className="bg-white dark:bg-background border-t border-border p-3 flex justify-between items-center text-xs text-muted-foreground">
-                                <span>Last scanned: Just now</span>
+                                <span>{t('ui.last_scanned')}</span>
                                 <button
                                     onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
                                     className="text-brand-600 font-medium hover:underline cursor-pointer"
                                 >
-                                    Full Report
+                                    {t('ui.full_report')}
                                 </button>
                             </div>
                         </motion.div>
                     </div>
-
+ 
                     {/* Text Content */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center">
                         <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 mb-6 shadow-sm border border-brand-200 dark:border-brand-500/20">
                             <ShieldAlert className="w-6 h-6" />
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-balance">
-                            Shield your money and <br className="hidden lg:block" /> professional work.
+                            {t.rich('title', {
+                                br: () => <br className="hidden lg:block" />
+                            })}
                         </h2>
                         <p className="text-lg text-muted-foreground mb-6 text-balance">
-                            New AI tools and random SaaS often hide clauses that claim ownership of your work or lock you into expensive subscriptions. TrustLens surfaces these traps instantly.
+                            {t('description')}
                         </p>
                         <p className="text-muted-foreground text-balance border-l-2 border-brand-500 pl-4 py-1 italic">
-                            &quot;We surface the risks, so you make informed choices without needing a law degree.&quot;
+                            {t('quote')}
                         </p>
                     </div>
-
+ 
                 </div>
             </div>
         </section>

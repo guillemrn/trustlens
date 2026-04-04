@@ -7,8 +7,18 @@ import { ComingSoon } from "@/components/ComingSoon";
 import { FAQ } from "@/components/FAQ";
 import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
+import {setRequestLocale} from 'next-intl/server';
 
-export default function Home() {
+export default async function Home({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  
+  // Enable static rendering
+  setRequestLocale(locale);
+
   return (
     <main className="min-h-screen bg-background">
       <Hero />

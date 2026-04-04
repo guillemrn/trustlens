@@ -1,12 +1,13 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { AlertTriangle, ShieldAlert, FileText, CheckCircle2, ChevronDown, Chrome, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import {useTranslations} from 'next-intl';
 
 function RiskItem({ risk, index }: { risk: { title: string; desc: string }, index: number }) {
     const [isExpanded, setIsExpanded] = useState(false);
-
+ 
     return (
         <motion.li
             initial={{ opacity: 0, x: -10 }}
@@ -33,31 +34,34 @@ function RiskItem({ risk, index }: { risk: { title: string; desc: string }, inde
         </motion.li>
     );
 }
-
+ 
 export function ProductDemo() {
+    const t = useTranslations('ProductDemo');
+
     return (
         <section className="py-24 bg-linear-to-b from-brand-50/50 dark:from-brand-950/10 to-white dark:to-background">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-
+ 
                     {/* Content describing the demo */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center">
                         <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-100 dark:bg-accent-500/10 text-accent-600 dark:text-accent-400 mb-6 shadow-sm border border-accent-200/50 dark:border-accent-500/20">
                             <Chrome className="w-6 h-6" />
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-balance">
-                            See the real risks. <br />
-                            Before you click accept.
+                            {t.rich('title', {
+                                br: () => <br />
+                            })}
                         </h2>
                         <p className="text-lg text-muted-foreground mb-8 text-balance">
-                            Our AI scans thousands of words of legal text to highlight the clauses that matter most.
+                            {t('description')}
                         </p>
-
+ 
                         <ul className="space-y-4">
                             {[
-                                "Flags hidden arbitration clauses",
-                                "Detects aggressive data sharing",
-                                "Warns about auto-renewals"
+                                t('feature_1'),
+                                t('feature_2'),
+                                t('feature_3')
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3">
                                     <div className="w-6 h-6 rounded-full bg-brand-100 dark:bg-brand-500/10 flex items-center justify-center shrink-0">
@@ -68,7 +72,7 @@ export function ProductDemo() {
                             ))}
                         </ul>
                     </div>
-
+ 
                     {/* Fake browser extension UI */}
                     <div className="w-full md:w-1/2 flex justify-center md:justify-end">
                         <motion.div
@@ -89,13 +93,13 @@ export function ProductDemo() {
                                     <FileText className="w-3 h-3" /> Examply.com
                                 </div>
                             </div>
-
+ 
                             {/* Extension Body */}
                             <div className="p-5 bg-gray-50/30 dark:bg-muted/30">
                                 <div className="bg-white dark:bg-background rounded-xl p-5 border border-border shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] dark:shadow-none mb-5">
                                     <div className="flex items-end justify-between mb-2">
-                                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Trust Score</span>
-                                        <span className="text-xs font-semibold text-warning-700 dark:text-warning-400 bg-warning-100 dark:bg-warning-500/10 px-2 py-1 rounded-md border border-warning-200 dark:border-warning-500/20">Medium Risk</span>
+                                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t('ui.trust_score')}</span>
+                                        <span className="text-xs font-semibold text-warning-700 dark:text-warning-400 bg-warning-100 dark:bg-warning-500/10 px-2 py-1 rounded-md border border-warning-200 dark:border-warning-500/20">{t('ui.risk_level')}</span>
                                     </div>
                                     <div className="flex items-baseline gap-1 mt-1">
                                         <span className="text-5xl font-bold tracking-tight text-foreground">63</span>
@@ -112,22 +116,22 @@ export function ProductDemo() {
                                         />
                                     </div>
                                 </div>
-
+ 
                                 <div>
-                                    <h4 className="text-xs font-semibold mb-3 tracking-wide uppercase text-muted-foreground">Top risks detected</h4>
+                                    <h4 className="text-xs font-semibold mb-3 tracking-wide uppercase text-muted-foreground">{t('ui.top_risks')}</h4>
                                     <ul className="space-y-2.5">
                                         {[
                                             {
-                                                title: "Data shared with third-party partners",
-                                                desc: "Your browsing history and personal details can be sold to advertisers."
+                                                title: t('ui.risk_1_title'),
+                                                desc: t('ui.risk_1_desc')
                                             },
                                             {
-                                                title: "Mandatory arbitration clause",
-                                                desc: "You waive your right to sue the company in court or join a class action."
+                                                title: t('ui.risk_2_title'),
+                                                desc: t('ui.risk_2_desc')
                                             },
                                             {
-                                                title: "Automatic subscription renewal",
-                                                desc: "They can charge your card indefinitely without prior notice."
+                                                title: t('ui.risk_3_title'),
+                                                desc: t('ui.risk_3_desc')
                                             }
                                         ].map((risk, i) => (
                                             <RiskItem key={i} risk={risk} index={i} />
@@ -135,20 +139,20 @@ export function ProductDemo() {
                                     </ul>
                                 </div>
                             </div>
-
+ 
                             {/* Extension Footer */}
                             <div className="bg-white dark:bg-background border-t border-border p-3 flex justify-between items-center text-xs text-muted-foreground">
-                                <span>Last scanned: Just now</span>
+                                <span>{t('ui.last_scanned')}</span>
                                 <button
                                     onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
                                     className="text-brand-600 font-medium hover:underline cursor-pointer"
                                 >
-                                    Full Report
+                                    {t('ui.full_report')}
                                 </button>
                             </div>
                         </motion.div>
                     </div>
-
+ 
                 </div>
             </div>
         </section>

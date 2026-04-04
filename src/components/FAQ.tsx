@@ -1,30 +1,32 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
-
-const faqs = [
-    {
-        question: "Do you collect or sell my browsing data?",
-        answer: "No. TrustLens is designed with privacy-first principles. The extension only reads the Terms of Service pages you visit, and we never collect, store, or sell your personal browsing history."
-    },
-    {
-        question: "Is TrustLens free to use?",
-        answer: "Yes, our core scanning and summarization features are entirely free during our Early Access phase. In the future, we may introduce advanced premium features, but basic transparency will always be accessible."
-    },
-    {
-        question: "Which browsers does it support?",
-        answer: "TrustLens is currently being built for Google Chrome (and other Chromium-based browsers like Brave, Edge, and Arc). We plan to add native support for Firefox and Safari shortly after launch."
-    },
-    {
-        question: "How accurate is the AI scanner?",
-        answer: "We use state-of-the-art AI models, combined with highly specialized legal prompts, to extract and flag common hidden clauses with high accuracy. However, TrustLens is designed to assist you in understanding complex terms quickly, not to replace formal legal advice."
-    }
-];
+import {useTranslations} from 'next-intl';
 
 export function FAQ() {
+    const t = useTranslations('FAQ');
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    const faqs = [
+        {
+            question: t('q1'),
+            answer: t('a1')
+        },
+        {
+            question: t('q2'),
+            answer: t('a2')
+        },
+        {
+            question: t('q3'),
+            answer: t('a3')
+        },
+        {
+            question: t('q4'),
+            answer: t('a4')
+        }
+    ];
 
     return (
         <section className="py-24 bg-white dark:bg-background" id="faq">
@@ -36,7 +38,7 @@ export function FAQ() {
                         viewport={{ once: true }}
                         className="inline-block px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 text-sm font-medium mb-6 border border-brand-100 dark:border-brand-500/20"
                     >
-                        Questions & Answers
+                        {t('badge')}
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -45,10 +47,10 @@ export function FAQ() {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
                     >
-                        Frequently asked questions
+                        {t('title')}
                     </motion.h2>
                 </div>
-
+ 
                 <div className="max-w-3xl mx-auto">
                     {faqs.map((faq, index) => (
                         <motion.div

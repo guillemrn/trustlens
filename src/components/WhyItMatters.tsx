@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export function WhyItMatters() {
+    const t = useTranslations('WhyItMatters');
+
     return (
         <section className="py-24 bg-brand-950 text-white rounded-[3rem] mx-4 sm:mx-6 lg:mx-8 my-24 overflow-hidden relative">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
@@ -24,10 +27,12 @@ export function WhyItMatters() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-balance"
+                        className="text-4xl md:text-5xl font-bold tracking-tight mb-4"
                     >
-                        Terms of Service are broken. <br className="hidden md:block" />
-                        <span className="text-accent-400">We&apos;re fixing them.</span>
+                        {t.rich('title', {
+                            br: () => <br />,
+                            accent: (chunks) => <span className="text-accent-400">{chunks}</span>
+                        })}
                     </motion.h2>
 
                     <motion.div
@@ -38,15 +43,17 @@ export function WhyItMatters() {
                         className="grid sm:grid-cols-2 gap-8 text-left bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-md"
                     >
                         <div>
-                            <h3 className="text-2xl font-semibold mb-3">The Problem: The Paradox of Convenience</h3>
+                            <h3 className="text-2xl font-semibold mb-3">{t('problem_title')}</h3>
                             <p className="text-white/70 leading-relaxed">
-                                While we worry about Big Tech, the real danger is the &ldquo;Wild West&rdquo; of the internet: random AI tools and SaaS where users expose their money and intellectual property without even knowing it.
+                                {t('problem_desc')}
                             </p>
                         </div>
                         <div>
-                            <h3 className="text-2xl font-semibold mb-3">The Solution: A Strategic Shield</h3>
+                            <h3 className="text-2xl font-semibold mb-3">{t('solution_title')}</h3>
                             <p className="text-white/70 leading-relaxed">
-                                TrustLens hunts for three specific threats: <strong>Financial Traps</strong> (hidden subscriptions), <strong>IP Theft</strong> (abusive AI copyright clauses), and <strong>Data Brokers</strong> selling your personal info.
+                                {t.rich('solution_desc', {
+                                    strong: (chunks) => <strong className="text-white font-bold">{chunks}</strong>
+                                })}
                             </p>
                         </div>
                     </motion.div>

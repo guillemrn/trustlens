@@ -1,16 +1,19 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, ShieldCheck } from "lucide-react";
+import {useTranslations} from 'next-intl';
 
 export function Hero() {
+    const t = useTranslations('Hero');
+
     return (
         <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
             {/* Background gradients */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] opacity-20 pointer-events-none">
                 <div className="absolute inset-0 bg-linear-to-b from-brand-500/30 via-accent-500/10 to-transparent blur-3xl rounded-full" />
             </div>
-
+ 
             <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -19,27 +22,27 @@ export function Hero() {
                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-400 text-sm font-medium mb-8 border border-brand-100/50 dark:border-brand-500/20"
                 >
                     <span className="flex h-2 w-2 rounded-full bg-brand-500"></span>
-                    Introducing TrustLens
+                    {t('badge')}
                 </motion.div>
-
+ 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                     className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance mb-6"
                 >
-                    Your <span className="gradient-text text-brand-600">Financial & Professional Shield</span> in the AI era
+                    {t('title_start')}<span className="gradient-text text-brand-600">{t('title_gradient')}</span>{t('title_end')}
                 </motion.h1>
-
+ 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                     className="text-lg md:text-xl text-muted-foreground text-balance max-w-2xl mx-auto mb-10"
                 >
-                    Stop clicking &ldquo;Accept&rdquo; blindly. TrustLens hunts for hidden subscriptions, IP theft, and data brokers in the &ldquo;Wild West&rdquo; of new AI tools and SaaS.
+                    {t('description')}
                 </motion.p>
-
+ 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -50,7 +53,7 @@ export function Hero() {
                         onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
                         className="w-full sm:w-auto px-8 py-4 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2 group cursor-pointer"
                     >
-                        Get early access
+                        {t('cta_primary')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                     <button
@@ -58,20 +61,20 @@ export function Hero() {
                         className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-background text-foreground font-medium hover:bg-gray-50 dark:hover:bg-muted transition-colors border shadow-sm flex items-center justify-center gap-2 group cursor-pointer"
                     >
                         <PlayCircle className="w-5 h-5 text-accent-500" />
-                        See how it works
+                        {t('cta_secondary')}
                     </button>
                 </motion.div>
-
+ 
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="flex flex-col items-center justify-center gap-3 pt-8 border-t border-border/50 max-w-2xl mx-auto"
                 >
-
+ 
                     <p className="text-sm text-muted-foreground flex items-center gap-2">
                         <ShieldCheck className="w-4 h-4 text-brand-500" />
-                        Works with policies from Generative AI, PDF Compressors, and new SaaS platforms.
+                        {t('footer')}
                     </p>
                 </motion.div>
             </div>
