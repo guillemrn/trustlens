@@ -1,32 +1,27 @@
 "use client";
  
 import { motion } from "framer-motion";
-import { Activity, AlertTriangle, FileText, Lock } from "lucide-react";
-import {useTranslations} from 'next-intl';
+import { Banknote, Palette, ShieldAlert } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ComingSoon() {
     const t = useTranslations('ComingSoon');
 
     const features = [
         {
-            icon: <Activity className="w-5 h-5 text-accent-600" />,
+            icon: <Banknote className="w-5 h-5 text-accent-600" />,
             title: t('feature_1_title'),
             description: t('feature_1_desc')
         },
         {
-            icon: <AlertTriangle className="w-5 h-5 text-warning-500" />,
+            icon: <Palette className="w-5 h-5 text-brand-600" />,
             title: t('feature_2_title'),
             description: t('feature_2_desc')
         },
         {
-            icon: <FileText className="w-5 h-5 text-brand-600" />,
+            icon: <ShieldAlert className="w-5 h-5 text-warning-600" />,
             title: t('feature_3_title'),
             description: t('feature_3_desc')
-        },
-        {
-            icon: <Lock className="w-5 h-5 text-blue-500" />,
-            title: t('feature_4_title'),
-            description: t('feature_4_desc')
         }
     ];
  
@@ -62,7 +57,7 @@ export function ComingSoon() {
                     </motion.p>
                 </div>
  
-                <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
